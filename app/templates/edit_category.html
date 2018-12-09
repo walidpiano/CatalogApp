@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog App</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="../../static/css/style.css" rel="stylesheet">
+    <script src="../../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../../static/js/jquery-ui.min.js"></script>
+    <script src="../../static/js/category.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Edit Category</h1>
+    </header>
+
+    <form>
+        <div class="form-container">
+            <input type="hidden" id="category-id" value="{{ category.id }}">
+            <div class="labels">
+                <label for="category-name">Category Name:</label>
+            </div>
+            <div class="inputs">
+                <input id="category-name" name="category" type="text" required placeholder="Enter Category Name!" value="{{ category.name }}">
+            </div>
+
+            <br>
+
+            <div class="buttons">
+                <input type="submit" value="UPDATE">
+            </div>
+
+            <div class="buttons">
+                <button type="reset" id="btn-cancel">Cancel</button>
+            </div>
+
+        </div>
+
+    </form>
+
+
+    <footer>
+        <p id="my-signature">Developed by: <a id="my-mail" href="mailto:walidpiano@yahoo.com">Walid Zakaria</a></p>
+    </footer>
+
+    </body>
+</html>

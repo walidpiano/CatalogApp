@@ -1,0 +1,203 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+header {
+    background: rgb(40,50,100);
+    padding: 12px;
+    margin: 0 0 10px 0;
+}
+
+h1 {
+    color: white;
+    display: inline-block;
+}
+
+#login {
+    float: right;
+    margin: 0 auto;
+}
+
+#btn-login, #btn-signup {
+    font-size: 16px;
+    background: gray;
+    color: antiquewhite;
+    border: none;
+    width: 100px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+body {
+    background: rgb(210,210,210);
+    position: relative;
+}
+
+main {
+    background: white;
+    max-width: 90%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 10px;
+}
+
+.top-header {
+    font-weight: bold;
+    font-size: 20px;
+    background: grey;
+    margin: 0;
+    width: 40%;
+    padding: 10px 5px;
+
+}
+
+.items-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.category, .latest-item {
+    width: 50%;
+    padding: 10px 5px;
+}
+
+a {
+    display: flex;
+    width: 50%;
+    text-decoration-line: none;
+    color: orangered;
+    font-size: 18px;
+}
+
+footer {
+    background: rgb(40,50,100);
+    margin: 0 auto;
+    border-radius:0 0 10px 10px;
+    position: fixed;
+    bottom: 0;
+    width: 99%;
+    z-index: 1;
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+}
+
+#my-signature, #my-mail {
+    color: antiquewhite;
+    display: inline;
+    font-size: 18px;
+    margin: 20px 3px;
+}
+
+.category-header {
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    background: grey;
+    margin: 0;
+    padding: 10px 5px;
+    text-align: center;
+}
+
+.category-item-list {
+    width: 100%;
+    display: inline-block;
+    margin: 10px auto;
+}
+
+h3 {
+    color: red;
+    text-decoration-line: underline;
+    display: block;
+    width: 100%;
+}
+
+#item-description {
+    display: inline-block;
+    width: 100%;
+}
+
+#link-back {
+    background: rgb(53, 69, 214);
+    color: antiquewhite;
+    padding: 3px 20px;
+    border-radius: 15px;
+    float: right;
+    margin-top: 20px;
+    width: 110px;
+}
+
+form {
+    max-width: 500px;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid gray;
+    margin: 0 auto;
+}
+
+input, #google-login, #btn-cancel, #btn-no {
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.labels {
+    width: 35%;
+    padding: 5px;
+}
+
+.inputs {
+    width: 65%;
+    padding: 5px;
+}
+
+.buttons {
+    width: 50%;
+    padding: 5px;
+}
+
+.buttons-container {
+    background: brown;
+    border-radius: 40px;
+    margin: 10px auto;
+    height: 60px;
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttons {
+    margin: auto 10px;
+    display: inline;
+    width: 40%;
+    margin-left: 6%;
+    color: white;
+}
+
+#btn-yes, #btn-no {
+    display: inline-block;
+    width: 45%;
+    border: 1px solid gray;
+    height: 30px;
+    margin: 0 auto;
+    background: antiquewhite;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#btn-yes {
+    color: red;
+}
+
+#btn-no {
+    color: green;
+}
+
+

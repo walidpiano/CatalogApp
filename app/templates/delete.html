@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog App</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="../../static/css/style.css" rel="stylesheet">
+    <script src="../../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../../static/js/jquery-ui.min.js"></script>
+        <script src="../../static/js/delete.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Delete</h1>
+    </header>
+
+
+    <form>
+
+        <h3>Are you sure you want to delete this {{ object_type }}?</h3>
+        <br>
+        <input type="hidden" id="object-type" value="{{ object_type }}">
+        <input type="hidden" id="object-id" value="{{ object_id }}">
+
+        <div class="dialog-result">
+            <input id="btn-yes" type="submit" value="Yes">
+            <a id="btn-no" href="/">No</a>
+        </div>
+    </form>
+
+
+    <footer>
+        <p id="my-signature">Developed by: <a id="my-mail" href="mailto:walidpiano@yahoo.com">Walid Zakaria</a></p>
+    </footer>
+
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog App</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/jquery-ui.min.js"></script>
+    <script src="../static/js/main.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Sign Up</h1>
+    </header>
+
+
+    <form action="{{ url_for('signup') }}" method="POST">
+        <div class="form-container">
+            <div class="labels">
+                <label for="input-name">Name:</label>
+            </div>
+            <div class="inputs">
+                <input name="username" id="input-name" type="text" required placeholder="What's your name?">
+            </div>
+            <br>
+            <div class="labels">
+                <label for="input-email">E-mail:</label>
+            </div>
+
+            <div class="inputs">
+                <input name="email" id="input-email" type="email" placeholder="What's your email?">
+            </div>
+            <br>
+            <div class="labels">
+                <label for="input-password">Password:</label>
+            </div>
+
+            <div class="inputs">
+                <input name="password" id="input-password" type="password" required placeholder="What's your password?">
+            </div>
+            <br>
+
+            <div class="buttons">
+                <input type="submit" value="Sign Up">
+            </div>
+
+            <div class="buttons">
+                <input type="reset" value="Cancel">
+            </div>
+
+        </div>
+
+    </form>
+
+
+    <footer>
+        <p id="my-signature">Developed by: <a id="my-mail" href="mailto:walidpiano@yahoo.com">Walid Zakaria</a></p>
+    </footer>
+
+    </body>
+</html>

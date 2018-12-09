@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog App</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/jquery-ui.min.js"></script>
+    <script src="../static/js/main.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Catalog App</h1>
+
+        <div id="login">
+            {% if current_user != '' %}
+                <button id="btn-logout" onclick="location.href='/logout';">Log Out</button>
+                <h3>Welcome {{ current_user }}</h3>
+            {% else %}
+                <button id="btn-login" onclick="location.href='/login';">Login</button>
+                <button id="btn-signup" onclick="location.href='/signup';">Sign up</button>
+            {% endif %}
+
+        </div>
+
+    </header>
+
+    <main>
+        <div id="items">
+            <div class="items-list">
+                <div class="top-header category">Category</div>
+                <div class="top-header latest-item">Latest Items</div>
+            </div>
+
+            <!--
+                place for last items by ajax
+            -->
+
+        </div>
+    </main>
+
+    {% if current_user != '' %}
+    <section>
+        <div class="buttons-container">
+            <a href="\add\category" class="buttons">Add Category</a>
+            <a href="\add\item" class="buttons">Add Item</a>
+        </div>
+    </section>
+    {% endif %}
+
+    <footer>
+        <p id="my-signature">Developed by: <a id="my-mail" href="mailto:walidpiano@yahoo.com">Walid Zakaria</a></p>
+    </footer>        
+
+    </body>
+</html>

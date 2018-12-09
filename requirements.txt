@@ -1,0 +1,15 @@
+werkzeug
+httplib2
+itsdangerous
+sqlalchemy
+Flask==0.12.2
+Flask-SQLAlchemy==2.3.2
+passlib==1.7.1
+oauth2client
+requests
+flask_httpauth
+flask_dance
+apiclient
+flask_login
+flask_oauth
+

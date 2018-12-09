@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog App</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="../../static/css/style.css" rel="stylesheet">
+    <script src="../../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../../static/js/jquery-ui.min.js"></script>
+
+
+</head>
+<body>
+
+    <header>
+        <h1>Catalog App</h1>
+
+        <div id="login">
+            {% if current_user != '' %}
+                <button id="btn-logout" onclick="location.href='/logout';">Log Out</button>
+                <h3>Welcome {{ current_user }}</h3>
+            {% else %}
+                <button id="btn-login" onclick="location.href='/login';">Login</button>
+                <button id="btn-signup" onclick="location.href='/signup';">Sign up</button>
+            {% endif %}
+
+        </div>
+    </header>
+
+    <main>
+        <div id="items">
+            <div class="items-list">
+                <div class="category-header">{{ category }}</div>
+            </div>
+
+            <div class="items-list">
+                <h3>{{ item.name }}</h3>
+
+                <p id="item-description">{{ item.description }}</p>
+
+                {% if current_user != '' %}
+                <br>
+                <a href="/item/edit/{{ item.id }}">(Edit Item)</a>
+                <a href="/item/delete/{{ item.id }}">(Delete Item)</a>
+                {% endif %}
+            </div>
+
+        </div>
+        <a id="link-back" href="/">Go Back</a>
+    </main>
+
+    <footer>
+        <p id="my-signature">Developed by: <a id="my-mail" href="mailto:walidpiano@yahoo.com">Walid Zakaria</a></p>
+    </footer>
+
+    </body>
+</html>

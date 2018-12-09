@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog App</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="../static/css/style.css" rel="stylesheet">
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/jquery-ui.min.js"></script>
+    <script src="../static/js/main.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <h1>New Item</h1>
+    </header>
+
+
+    <form action="{{ url_for('add_item') }}" method="POST">
+        <div class="form-container">
+            <div class="labels">
+                <label for="category-name">Category Name:</label>
+            </div>
+            <div class="inputs">
+                <select name="category" id="category-name" required>
+                    <option title="Select Category" value="">Select Category</option>
+                    {% for category in categories %}
+                    <option title="{{ category.name }}" value="{{ category.id }}">{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <br>
+            <div class="labels">
+                <label for="item-name">Item Name:</label>
+            </div>
+            <div class="inputs">
+                <input id="item-name" name="item_name" type="text" required placeholder="Enter Category Name!">
+            </div>
+
+            <br>
+            <div class="labels">
+                <label for="item-description">Item Description:</label>
+            </div>
+            <div class="inputs">
+                <input id="item-description" name="description" type="text" required placeholder="Enter Item Description...!">
+            </div>
+
+
+            <div class="buttons">
+                <input type="submit" value="SAVE">
+            </div>
+
+            <div class="buttons">
+                <button type="reset" id="btn-cancel">Cancel</button>
+            </div>
+
+        </div>
+
+    </form>
+
+
+    <footer>
+        <p id="my-signature">Developed by: <a id="my-mail" href="mailto:walidpiano@yahoo.com">Walid Zakaria</a></p>
+    </footer>
+
+    </body>
+</html>
