@@ -31,4 +31,4 @@ Note that once you open the [run.py](https://github.com/walidpiano/CatalogApp/bl
 ![json](https://github.com/walidpiano/CatalogApp/blob/master/app/app%20images/json.PNG "json")
 
 ## Requirements
-There are no specific requirements. You just need to have a web browser. I prefere Chrome.
+All the required installations are in [requirements.txt](https://github.com/walidpiano/CatalogApp/blob/master/requirements.txt).
