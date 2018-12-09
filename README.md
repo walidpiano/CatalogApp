@@ -1,21 +1,34 @@
-# Portfolio
-The webpage has a simple portfolio of me. I have tried to make it simple and attractive.
-To open the project, just open [index.html](https://github.com/walidpiano/MyPortfolio/blob/master/index.html) :wink: !
-
+# Catalog App
+This web app is a basic app for showing categories and items.
+The web has nice options with user login and authentication.
+Try the power of flask and run the application.
+just run [run.py](https://github.com/walidpiano/CatalogApp/blob/master/run.py) and enjoy :wink: !
 
 ## Installation
-
-1. The project has a simple website. It consists of one ```.html``` file and two folders (```img``` & ```css```).
-2. You just need to download the files, and then open the main page [index.html](https://github.com/walidpiano/MyPortfolio/blob/master/index.html).
+1. First of all you need to have linux environment installed either in virtual environment or using [PyCharm](https://www.jetbrains.com/pycharm/).
+2. I have provided all the required installations in [requirements.txt](https://github.com/walidpiano/CatalogApp/blob/master/requirements.txt) You can either manually install them using pip, or if you're using [PyCharm](https://www.jetbrains.com/pycharm/), I will install them automatically.
 
 ## Application Running:
-Note that once you open the [index.html](https://github.com/walidpiano/MyPortfolio/blob/master/index.html):
-1. Your webbrowser will open.
-2. A fancy fully responsive portfolio will open up.
+Note that once you open the [run.py](https://github.com/walidpiano/CatalogApp/blob/master/run.py):
+1. When you open the [localhost](http://127.0.0.1:5000/), the homepage will show up.
+2. The homepage shows all ```categories``` and the latest added ```item``` for each one.
+3. You can easily show all the ```items``` inside each category by clicking on it.
+4. You can also show any ```item``` details by clicking on it.
+5. If you need to add, edit, delete any content, you will have to signup (use your name, gmail, and put password).
+6. Whenever you need to login, you can use your credentials or either sign up using your ```google``` account.
+7. Once you're logged in you have the authority to modify the contents.
+8. You can also view all the content in ```json``` if you request [catalog.json](http://127.0.0.1:5000/catalog.json.)
+
+
 
 ## Application Screenshot:
-![application screenshot (1)](https://preview.ibb.co/i0n1fy/Capture.jpg "Screenshot 1")
-![application screenshot (2)](https://preview.ibb.co/hGWBfy/Capture.jpg "Screenshot 2")
+![main app when not logged in](https://github.com/walidpiano/CatalogApp/blob/master/app/app%20images/main.PNG "main")
+![main app when logged in](https://github.com/walidpiano/CatalogApp/blob/master/app/app%20images/main%20when%20logged%20in.PNG "main when logged")
+![signup](https://github.com/walidpiano/CatalogApp/blob/master/app/app%20images/signup.PNG "signup")
+![login](https://github.com/walidpiano/CatalogApp/blob/master/app/app%20images/login.PNG "login")
+![category](https://github.com/walidpiano/CatalogApp/blob/master/app/app%20images/category.PNG "category")
+![item](https://github.com/walidpiano/CatalogApp/blob/master/app/app%20images/item.PNG "item")
+![json](https://github.com/walidpiano/CatalogApp/blob/master/app/app%20images/json.PNG "json")
 
 ## Requirements
 There are no specific requirements. You just need to have a web browser. I prefere Chrome.
