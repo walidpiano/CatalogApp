@@ -44,6 +44,7 @@ class CategoryStore(BaseStore):
     def __init__(self):
         super().__init__(models.Category)
 
+
     def get_all_categories(self):
         result = self.data_provider.query.order_by(self.data_provider.name.desc()).all()
         return result

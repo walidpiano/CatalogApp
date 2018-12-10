@@ -12,4 +12,5 @@ flask_dance
 apiclient
 flask_login
 flask_oauth
-
+flask_migrate
+flask_script

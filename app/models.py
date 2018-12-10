@@ -7,7 +7,6 @@ import random
 from flask_login import UserMixin
 from app import db
 
-
 secret_key = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(32))
 
 
@@ -29,7 +28,7 @@ class User(db.Model, UserMixin):
         return s.dumps({'id': self.id})
 
     def __repr__(self):
-        return f"username: {self.username}, email: {self.email}, password: {self.password_hash}"
+        return "username: %s, email: %s, password: %s" % (self.username, self.email, self.password_hash)
 
     @staticmethod
     def verify_auth_token(token):
@@ -50,7 +49,7 @@ class Category(db.Model):
     name = db.Column(db.String(50), nullable=False)
 
     def __repr__(self):
-        return f'id: {self.id}, name: {self.name}'
+        return "id: %d, name: %s" % (self.id, self.name)
 
     @property
     def serialize(self):
@@ -70,8 +69,8 @@ class Item(db.Model):
     category = relationship(Category)
 
     def __repr__(self):
-        return f'''id: {self.id}, name: {self.name}, description: {self.description},
-         category_id: {self.category_id}'''
+        return "id: %d, name: %s, description: %s, category_id: %d" % (
+            self.id, self.name, self.description, self.category_id)
 
     @property
     def serialize(self):
@@ -82,4 +81,3 @@ class Item(db.Model):
             "description": self.description,
             "category": self.category_id
         }
-
