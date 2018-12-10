@@ -1,7 +1,7 @@
 from app import models, db
 
 
-class BaseStore():
+class BaseStore:
 
     def __init__(self, data_provider):
         self.data_provider = data_provider
@@ -41,7 +41,6 @@ class CategoryStore(BaseStore):
     def __init__(self):
         super().__init__(models.Category)
 
-
     def get_all_categories(self):
         result = self.data_provider.query.order_by(self.data_provider.name.desc()).all()
         return result
@@ -60,11 +59,13 @@ class ItemStore(BaseStore):
         super().__init__(models.Item)
 
     def get_last_item(self, category_id):
-        result = self.data_provider.query.filter_by(category_id=category_id).order_by(self.data_provider.id.desc()).first()
+        result = self.data_provider.query.filter_by(category_id=category_id).order_by(
+            self.data_provider.id.desc()).first()
         return result
 
     def get_all_items_by_category(self, category_id):
-        result = self.data_provider.query.filter_by(category_id=category_id).order_by(self.data_provider.id.desc()).all()
+        result = self.data_provider.query.filter_by(category_id=category_id).order_by(
+            self.data_provider.id.desc()).all()
         return result
 
     def get_item_by_name_and_category(self, category_id, item_name):
