@@ -1,7 +1,4 @@
-from flask import jsonify
-
 from app import models, db
-from sqlalchemy import desc, func
 
 
 class BaseStore():

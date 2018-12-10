@@ -17,13 +17,13 @@ $(document).ready(function() {
 
 function UpdateItem(itemId, categoryId, itemName, itemDescription) {
     var requestData;
-    request_data = {
+    requestData = {
         "item_id": itemId,
         "category_id": categoryId,
         "item_name": itemName,
-        "item_description": itemDescription,
+        "item_description": itemDescription
     };
-    console.log(request_data)
+    console.log(requestData)
         $.ajax({
             type: "PUT",
             url: "api/item/update",
