@@ -1,6 +1,5 @@
 from flask import request, redirect, render_template, url_for
 from flask_login import login_user, current_user, LoginManager, login_required, logout_user
-from requests_oauthlib import OAuth2Session
 
 from app import app
 from app import category_store, item_store, user_store
@@ -19,6 +18,8 @@ def load_user(user_id):
 @app.route('/home')
 @app.route('/index')
 def home():
+
+    # view home page with login buttons if not logged in
     if current_user.is_authenticated:
         logged_name = current_user.username
     else:
@@ -29,6 +30,7 @@ def home():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
+
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     else:
@@ -62,6 +64,8 @@ def logout():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+
+    # to login using credentials
     if current_user.is_authenticated:
         return redirect(url_for('home'))
 
