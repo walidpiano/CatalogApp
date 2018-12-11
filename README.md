@@ -18,7 +18,7 @@ Note that once you open the [run.py](https://github.com/walidpiano/CatalogApp/bl
 5. If you need to add, edit, delete any content, you will have to signup (use your name, gmail, and put password).
 6. Whenever you need to login, you can use your credentials or either sign up using your ```google``` account.
 7. Once you're logged in you have the authority to modify the contents.
-8. You can also view all the content in ```json``` if you request [catalog.json](http://127.0.0.1:5000/catalog.json.)
+8. You can also view all the content in ```json``` if you request [catalog.json](http://127.0.0.1:5000/catalog.json)
 
 
 
