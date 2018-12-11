@@ -9,8 +9,8 @@ from oauthlib.oauth2.rfc6749.errors import InvalidGrantError, TokenExpiredError
 from app import app, user_store
 
 auth = HTTPBasicAuth()
-CLIENT_ID = '1099071368483-b5va6131038lda6ac1un62rufb5bfv69.apps.googleusercontent.com'
 
+CLIENT_ID = '1099071368483-b5va6131038lda6ac1un62rufb5bfv69.apps.googleusercontent.com'
 CLIENT_SECRET = '5ulFhoZUYU1Mw0pyaHCIBqdW'
 
 APPLICATION_NAME = "ND_App"
