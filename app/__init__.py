@@ -28,6 +28,7 @@ category_store = stores.CategoryStore()
 item_store = stores.ItemStore()
 user_store = stores.UserStore()
 
+CLIENT_SECRET_FILE = 'app/client_secret.json'
 
 from app import views
 from app import api
