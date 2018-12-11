@@ -23,7 +23,7 @@
                 <label for="input-name">Your Name or Email:</label>
             </div>
             <div class="inputs">
-                <input id="input-name" name="user_identity" type="text" required placeholder="Who Are You?">
+                <input id="input-name" name="user_identity" type="text" required placeholder="Who Are You?" autofocus>
             </div>
             <br>
             <div class="labels">
@@ -40,7 +40,7 @@
             </div>
 
             <div class="buttons">
-                <button id="google-login">Google Login</button>
+                <button onclick="window.location.href='/gconnect';" type="button" id="google-login">Google Login</button>
             </div>
 
         </div>

@@ -1,5 +1,6 @@
 from flask import request, redirect, render_template, url_for
-from flask_login import login_user, current_user, LoginManager, login_required, logout_user
+from flask_login import login_user, current_user,\
+    LoginManager, login_required, logout_user
 
 from app import app
 from app import category_store, item_store, user_store
@@ -95,7 +96,8 @@ def show_catalog(category):
     else:
         logged_name = ''
 
-    return render_template('category.html', category=category, category_id=category_id.id, items=items,
+    return render_template('category.html', category=category,
+                           category_id=category_id.id, items=items,
                            current_user=logged_name)
 
 
@@ -108,7 +110,8 @@ def show_item(category_name, item_name):
         logged_name = current_user.username
     else:
         logged_name = ''
-    return render_template('item.html', item=item, category=category_name, current_user=logged_name)
+    return render_template('item.html', item=item,
+                           category=category_name, current_user=logged_name)
 
 
 @app.route('/add/category', methods=['GET', 'POST'])
@@ -133,7 +136,8 @@ def add_item():
         category_id = request.form['category']
         item_name = request.form['item_name']
         item_description = request.form['description']
-        new_item = Item(name=item_name, description=item_description, category_id=category_id)
+        new_item = Item(name=item_name,
+                        description=item_description, category_id=category_id)
         item_store.add(new_item)
         return redirect(url_for('home'))
 
@@ -158,17 +162,19 @@ def edit_item(item_id):
 
     if request.method == 'GET':
         categories = category_store.get_all()
-        return render_template('edit_item.html', categories=categories, item=current_item)
+        return render_template('edit_item.html',
+                               categories=categories, item=current_item)
 
 
 @app.route('/category/delete/<int:category_id>', methods=['GET'])
 @login_required
 def delete_category(category_id):
-    return render_template('delete.html', object_type='category', object_id=category_id)
+    return render_template('delete.html',
+                           object_type='category', object_id=category_id)
 
 
 @app.route('/item/delete/<int:item_id>', methods=['GET'])
 @login_required
 def delete_item(item_id):
-    return render_template('delete.html', object_type='item', object_id=item_id)
-
+    return render_template('delete.html',
+                           object_type='item', object_id=item_id)

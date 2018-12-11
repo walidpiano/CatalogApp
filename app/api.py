@@ -73,7 +73,8 @@ def update_item():
     return result
 
 
-@app.route('/category/delete/api/category/delete/<int:category_id>', methods=['DELETE'])
+@app.route('/category/delete/api/category/delete/<int:category_id>',
+           methods=['DELETE'])
 @login_required
 def remove_category(category_id):
 
@@ -89,7 +90,8 @@ def remove_category(category_id):
     return result
 
 
-@app.route('/item/delete/api/item/delete/<int:item_id>', methods=['DELETE'])
+@app.route('/item/delete/api/item/delete/<int:item_id>',
+           methods=['DELETE'])
 @login_required
 def remove_item(item_id):
 

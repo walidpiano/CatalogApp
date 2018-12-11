@@ -48,7 +48,7 @@
                 <label for="item-description">Item Description:</label>
             </div>
             <div class="inputs">
-                <input id="item-description" name="description" type="text" required placeholder="Enter Item Description...!" value="{{ item.description }}">
+                <input id="item-description" name="description" type="text" required placeholder="Enter Item Description...!" value="{{ item.description }}" autofocus>
             </div>
 
 
@@ -57,7 +57,7 @@
             </div>
 
             <div class="buttons">
-                <button type="reset" id="btn-cancel">Cancel</button>
+                <button type="button" onclick="window.location.href='/';" type="reset" id="btn-cancel">Cancel</button>
             </div>
 
         </div>

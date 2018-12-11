@@ -1,13 +1,15 @@
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 from passlib.apps import custom_app_context as pwd_context
-from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer, BadSignature, SignatureExpired)
+from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer,
+                          BadSignature, SignatureExpired)
 import string
 import random
 from flask_login import UserMixin
 from app import db
 
-secret_key = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in range(32))
+secret_key = ''.join(random.choice(
+    string.ascii_uppercase + string.digits) for x in range(32))
 
 
 class User(db.Model, UserMixin):
@@ -28,7 +30,8 @@ class User(db.Model, UserMixin):
         return s.dumps({'id': self.id})
 
     def __repr__(self):
-        return "username: %s, email: %s, password: %s" % (self.username, self.email, self.password_hash)
+        return "username: %s, email: %s, password: %s" % (
+            self.username, self.email, self.password_hash)
 
     @staticmethod
     def verify_auth_token(token):

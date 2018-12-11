@@ -17,11 +17,6 @@ class BaseStore:
     def get_by_id(self, id):
         return self.data_provider.query.get(id)
 
-    def update(self, entity, fields):
-        result = self.data_provider.query.filter_by(id=entity.id).update(fields)
-        db.session.commit()
-        return result
-
     def delete(self, id):
         result = self.data_provider.query.filter_by(id=id).delete()
         db.session.commit()
@@ -39,10 +34,11 @@ class BaseStore:
 class CategoryStore(BaseStore):
 
     def __init__(self):
-        super().__init__(models.Category)
+        BaseStore.__init__(self, models.Category)
 
     def get_all_categories(self):
-        result = self.data_provider.query.order_by(self.data_provider.name.desc()).all()
+        result = self.data_provider.query \
+            .order_by(self.data_provider.name.desc()).all()
         return result
 
     def get_id_by_name(self, category_name):
@@ -51,34 +47,45 @@ class CategoryStore(BaseStore):
 
     def update(self, entity):
         fields = {"name": entity.name}
-        return super().update(entity, fields)
+        result = self.data_provider.query. \
+            filter_by(id=entity.id).update(fields)
+        db.session.commit()
+        return result
 
 
 class ItemStore(BaseStore):
     def __init__(self):
-        super().__init__(models.Item)
+        BaseStore.__init__(self, models.Item)
 
     def get_last_item(self, category_id):
-        result = self.data_provider.query.filter_by(category_id=category_id).order_by(
-            self.data_provider.id.desc()).first()
+        result = self.data_provider.query \
+            .filter_by(category_id=category_id)\
+            .order_by(self.data_provider.id.desc()).first()
         return result
 
     def get_all_items_by_category(self, category_id):
-        result = self.data_provider.query.filter_by(category_id=category_id).order_by(
-            self.data_provider.id.desc()).all()
+        result = self.data_provider\
+            .query.filter_by(category_id=category_id)\
+            .order_by(self.data_provider.id.desc()).all()
         return result
 
     def get_item_by_name_and_category(self, category_id, item_name):
-        result = self.data_provider.query.filter_by(category_id=category_id, name=item_name).first()
+        result = self.data_provider.query\
+            .filter_by(category_id=category_id, name=item_name).first()
         return result
 
     def update(self, entity):
-        fields = {"name": entity.name, "description": entity.description, "category_id": entity.category_id}
-        return super().update(entity, fields)
+        fields = {"name": entity.name, "description": entity.description,
+                  "category_id": entity.category_id}
+        result = self.data_provider.query. \
+            filter_by(id=entity.id).update(fields)
+        db.session.commit()
+        return result
 
     def delete_under_category(self, category_id):
-        items = self.data_provider.query.filter_by(category_id=category_id).delete()
-        return True
+        items = self.data_provider.query\
+            .filter_by(category_id=category_id).delete()
+        return items
 
     def show_categorized(self, category_id):
         items = self.get_all_items_by_category(category_id)
@@ -87,7 +94,7 @@ class ItemStore(BaseStore):
 
 class UserStore(BaseStore):
     def __init__(self):
-        super().__init__(models.User)
+        BaseStore.__init__(self, models.User)
 
     def get_by_username(self, username):
         result = self.data_provider.query.filter_by(username=username).first()
