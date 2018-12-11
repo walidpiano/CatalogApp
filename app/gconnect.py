@@ -9,13 +9,11 @@ from oauthlib.oauth2.rfc6749.errors import InvalidGrantError, TokenExpiredError
 from app import app, user_store
 
 auth = HTTPBasicAuth()
-CLIENT_ID = json.loads(
-    open('app/client_secrets.json', 'r').read())['web']['client_id']
+CLIENT_ID = '1099071368483-b5va6131038lda6ac1un62rufb5bfv69.apps.googleusercontent.com'
 
-CLIENT_SECRET = json.loads(
-    open('app/client_secrets.json', 'r').read())['web']['client_secret']
+CLIENT_SECRET = '5ulFhoZUYU1Mw0pyaHCIBqdW'
 
-APPLICATION_NAME = "MyNanoCatalogApp"
+APPLICATION_NAME = "ND_App"
 
 blueprint = make_google_blueprint(
     client_id=CLIENT_ID,
