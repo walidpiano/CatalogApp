@@ -6,7 +6,7 @@ just run [run.py](https://github.com/walidpiano/CatalogApp/blob/master/run.py) a
 
 ## Installation
 1. First of all you need to have linux environment installed either in virtual environment or using [PyCharm](https://www.jetbrains.com/pycharm/).
-2. Please use Python V3.6, to avoid any errors.
+2. Please use Python V2.7, to avoid any errors.
 3. I have provided all the required installations in [requirements.txt](https://github.com/walidpiano/CatalogApp/blob/master/requirements.txt) You can either manually install them using pip, or if you're using [PyCharm](https://www.jetbrains.com/pycharm/), I will install them automatically.
 
 ## Application Running:
