@@ -41,7 +41,7 @@ class CategoryStore(BaseStore):
             .order_by(self.data_provider.name.desc()).all()
         return result
 
-    def get_id_by_name(self, category_name):
+    def get_by_name(self, category_name):
         result = self.data_provider.query.filter_by(name=category_name).first()
         return result
 

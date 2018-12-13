@@ -50,16 +50,19 @@ class Category(db.Model):
     __tablename__ = 'category'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
+    user_id = db.Column(db.Integer, ForeignKey('user.id'))
+    user = relationship(User)
 
     def __repr__(self):
-        return "id: %d, name: %s" % (self.id, self.name)
+        return "id: %d, name: %s, user_id: %d" % (self.id, self.name, self.user_id)
 
     @property
     def serialize(self):
         """returns data in easily serializable format"""
         return {
             "id": self.id,
-            "name": self.name
+            "name": self.name,
+            "user_id": self.user_id
         }
 
 
@@ -70,10 +73,12 @@ class Item(db.Model):
     description = db.Column(db.String(300))
     category_id = db.Column(db.Integer, ForeignKey('category.id'))
     category = relationship(Category)
+    user_id = db.Column(db.Integer, ForeignKey('user.id'))
+    user = relationship(User)
 
     def __repr__(self):
-        return "id: %d, name: %s, description: %s, category_id: %d" % (
-            self.id, self.name, self.description, self.category_id)
+        return "id: %d, name: %s, description: %s, category_id: %d, user_id: %d" % (
+            self.id, self.name, self.description, self.category_id, self.user_id)
 
     @property
     def serialize(self):
@@ -82,5 +87,6 @@ class Item(db.Model):
             "id": self.id,
             "name": self.name,
             "description": self.description,
-            "category": self.category_id
+            "category": self.category_id,
+            "user_id": self.user_id
         }

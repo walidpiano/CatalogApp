@@ -38,11 +38,13 @@
 
                 <p id="item-description">{{ item.description }}</p>
 
-                {% if current_user != '' %}
+                <!-- only show edit & delete links if the user owns the item -->
+                {% if logged_id == item.user_id %}
                 <br>
                 <a href="/item/edit/{{ item.id }}">(Edit Item)</a>
                 <a href="/item/delete/{{ item.id }}">(Delete Item)</a>
                 {% endif %}
+
             </div>
 
         </div>

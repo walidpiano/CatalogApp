@@ -24,6 +24,9 @@ os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 
 @app.route("/gconnect")
 def index():
+
+    # get the user email from google and check if it matches the user table in database
+    # if found, he will logged in
     if not google.authorized:
         return redirect(url_for("google.login"))
     resp = google.get("/oauth2/v2/userinfo")
